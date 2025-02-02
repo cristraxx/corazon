@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón Palpitando</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            position: relative;
+        }
+        .heart {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -60px;
+            left: 0;
+        }
+        .heart::after {
+            left: 60px;
+            top: 0;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .frame-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+        .frame-text.top {
+            top: 10px;
+        }
+        .frame-text.bottom {
+            bottom: 10px;
+        }
+        .frame-text.left {
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        .frame-text.right {
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%) rotate(90deg);
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="frame-text top">ERES LO MEJOR QUE ME PASO EN LA VIDA</div>
+    <div class="frame-text bottom">ERES LO MEJOR QUE ME PASO EN LA VIDA</div>
+    <div class="heart">
+        <div class="text">TE AMO MI NIÑA</div>
+    </div>
+</body>
+</html>
